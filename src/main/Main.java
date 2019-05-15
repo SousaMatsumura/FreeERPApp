@@ -31,38 +31,12 @@ public class Main {
          handleVCRedits.add(new Thread(st));
       }
 
-      /*st = new StoppableThread.Builder().command(CConsumer.getSynchronizedConsumer())
-                                 .parameterCommand(VCRedists.getParameters(1))
-                                 .parameterPredicate(DLL_CHECK_CONS.getParameters(1))
-                                 .countDownLatch(countDownLatch).build();
-
-      final Thread handleX86_2013 = new Thread(st);
-
-      st = new StoppableThread.Builder().command(CConsumer.getSynchronizedConsumer())
-                 .parameterCommand(VCRedists.getParameters(2))
-                 .parameterPredicate(DLL_CHECK_CONS.getParameters(2))
-                 .countDownLatch(countDownLatch).build();
-
-      final Thread handleX86_2017 = new Thread(st);
-
-      st = new StoppableThread.Builder().command(CConsumer.getSynchronizedConsumer())
-                 .parameterCommand(VCRedists.getParameters(3))
-                 .parameterPredicate(DLL_CHECK_CONS.getParameters(3))
-                 .countDownLatch(countDownLatch).build();
-
-      final Thread handleX64_2017 = new Thread(st);
-
-      handleX86_2013.start();
-      handleX86_2017.start();
-      if(CPredicates.EXIST.test(DLL_CHECK_CONS.getParameters(4))) handleX64_2017.start();
-      else countDownLatch.countDown();*/
-
       for (int i = 0, s = handleVCRedits.size(); i<s;i++) {
          if(i==2) {
-            if (CPredicates.EXIST.test(DLL_CHECK_CONS.getParameters(4))) handleVCRedits.get(i).start();
+            if (CPredicates.EXIST.test(DLL_CHECK_CONS.getParameters(4))) handleVCRedits.get(i+1).start();
             else countDownLatch.countDown();
          }else{
-            handleVCRedits.get(i).start();
+            handleVCRedits.get(i+1).start();
          }
       }
 
