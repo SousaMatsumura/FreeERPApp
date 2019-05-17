@@ -1,10 +1,11 @@
-package interfaces.concrete;
+package main.java.interfaces.concrete;
 
-import interfaces.AParameters;
+import main.java.interfaces.AParameters;
 
 import java.lang.annotation.Annotation;
 
 public class CParameters {
+   private CParameters(){}
    public static AParameters getInstanceOfParameter(final String command, final String path){
       return new AParameters(){
 

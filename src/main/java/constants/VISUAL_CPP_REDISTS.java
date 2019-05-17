@@ -1,15 +1,12 @@
-package constants;
+package main.java.constants;
 
-import interfaces.AParameters;
-import interfaces.concrete.CParameters;
+import main.java.interfaces.AParameters;
+import main.java.interfaces.concrete.CParameters;
 
 import java.util.*;
 
-public enum VCRedists {
-   X86_2013(1), X86_2017(2), X64_2017(3);
-   private int value;
-
-   VCRedists(int value){this.value = value;}
+public final class VISUAL_CPP_REDISTS {
+   private VISUAL_CPP_REDISTS(){}
 
    public static int getIndex(final AParameters param){
       if(param.equals(Constants.X86_2013_PARAM)) return 1;
@@ -27,19 +24,18 @@ public enum VCRedists {
 
    public static final Set<AParameters> GET_SET = getConstantsSet();
 
-   public static class Constants {
-      public static final AParameters X86_2013_PARAM = CParameters.getInstanceOfParameter(
+   private static class Constants {
+      private static final AParameters X86_2013_PARAM = CParameters.getInstanceOfParameter(
             "C:\\FreeERP\\EnterpriseDB-ApacheHTTPD\\installer\\ApacheHTTPD\\vcredist_x86.exe", null);
-      public static final AParameters X86_2017_PARAM = CParameters.getInstanceOfParameter(
+      private static final AParameters X86_2017_PARAM = CParameters.getInstanceOfParameter(
             "C:\\FreeERP\\11\\installer\\vcredist_x86.exe", null);
-      public static final AParameters X64_2017_PARAM = CParameters.getInstanceOfParameter(
+      private static final AParameters X64_2017_PARAM = CParameters.getInstanceOfParameter(
             "C:\\FreeERP\\11\\installer\\vcredist_x64.exe", null);
    }
 
-   public static Set getConstantsSet(){
+   private static Set getConstantsSet(){
       final List<AParameters> temp = Arrays.asList(
             Constants.X86_2013_PARAM, Constants.X86_2017_PARAM, Constants.X64_2017_PARAM);
       return new LinkedHashSet<>(Collections.unmodifiableSet(new LinkedHashSet<>(temp)));
    }
-
 }

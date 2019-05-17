@@ -1,6 +1,6 @@
-package interfaces.concrete;
+package main.java.interfaces.concrete;
 
-import interfaces.AParameters;
+import main.java.interfaces.AParameters;
 
 import java.security.InvalidParameterException;
 import java.util.concurrent.CountDownLatch;
@@ -13,11 +13,10 @@ public class StoppableThread implements Runnable{
    private AParameters parameterCommand;
    private AParameters parameterPredicate;
 
-
    private StoppableThread(Consumer command, AParameters parameterCommand, AParameters parameterPredicate, CountDownLatch countDownLatch){
       if(command == null || parameterCommand == null || parameterPredicate == null || countDownLatch == null)
          throw new InvalidParameterException();
-      this.flag = CPredicates.EXIST.test(parameterPredicate);
+      this.flag = CPredicates.getExist().test(parameterPredicate);
       this.parameterPredicate = parameterPredicate;
       this.command = command;
       this.parameterCommand = parameterCommand;
@@ -58,7 +57,7 @@ public class StoppableThread implements Runnable{
       while(!flag){
          try {
             command.accept(parameterCommand);
-            flag = CPredicates.EXIST.test(parameterPredicate);
+            flag = CPredicates.getExist().test(parameterPredicate);
          }catch (Exception err){
             err.printStackTrace();
          }
@@ -66,7 +65,4 @@ public class StoppableThread implements Runnable{
       countDownLatch.countDown();
    }
 
-   public void stop(){
-      flag = true;
-   }
 }

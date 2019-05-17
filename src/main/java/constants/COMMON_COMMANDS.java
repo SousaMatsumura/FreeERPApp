@@ -1,13 +1,11 @@
-package constants;
+package main.java.constants;
 
-import interfaces.AParameters;
-import interfaces.concrete.CParameters;
+import main.java.interfaces.AParameters;
+import main.java.interfaces.concrete.CParameters;
 
-public enum CommonCommands {
-   INSTALL_APACHE(1), OPEN_CHROME(2);
-   private int value;
+public final class COMMON_COMMANDS {
 
-   CommonCommands(int value){this.value = value;}
+   private COMMON_COMMANDS(){}
 
    public static int getIndex(final AParameters param){
       if(param.equals(Constants.INSTALL_APACHE_PARAM)) return 1;
@@ -21,10 +19,10 @@ public enum CommonCommands {
       else throw new NullPointerException(("Value "+value+" don't exists"));
    }
 
-   public static class Constants {
-      public static final AParameters INSTALL_APACHE_PARAM = CParameters.getInstanceOfParameter(
+   private static class Constants {
+      private static final AParameters INSTALL_APACHE_PARAM = CParameters.getInstanceOfParameter(
             "C:\\FreeERP\\EnterpriseDB-ApacheHTTPD\\apache\\bin\\httpd.exe -k install", null);
-      public static final AParameters OPEN_CHROME_PARAM = CParameters.getInstanceOfParameter(
+      private static final AParameters OPEN_CHROME_PARAM = CParameters.getInstanceOfParameter(
             "c:\\program files (x86)\\google\\chrome\\application\\chrome.exe"
                   +" --new-window \"http://localhost:8000\"", null);
    }
