@@ -18,33 +18,7 @@ public class Main {
       handleUserPathChoice();
 
       /*Abrindo cada uma das janelas de instalação dos vcredist, uma por vez*/
-
-      CountDownLatch countDownLatch = new CountDownLatch(3);
-
-      StoppableThread st;
-
-      List<Thread> handleVCRedits = new ArrayList<>();
-      for(int i = 1; i<4; i++){
-         st = new StoppableThread.Builder().command(CConsumers.getSynchronizedConsumer())
-                    .parameterCommand(VISUAL_CPP_REDISTS.getParameters(i))
-                    .parameterPredicate(DLL_CHECK_CONS.getParameters(i))
-                    .countDownLatch(countDownLatch).build();
-
-         handleVCRedits.add(new Thread(st));
-      }
-
-      for (int i = 0, s = handleVCRedits.size(); i<s;i++) {
-         if(i==2) {
-            if (CPredicates.getExist().test(DLL_CHECK_CONS.getParameters(4)))
-               handleVCRedits.get(i).start();
-            else countDownLatch.countDown();
-         }else{
-            handleVCRedits.get(i).start();
-         }
-      }
-
-      countDownLatch.await();
-
+      handleVCRedists();
 
       /*Instalando HTTPD Apache Server*/
       CConsumers.getConsumer().accept(COMMON_COMMANDS.getParameters(1));
@@ -74,5 +48,33 @@ public class Main {
       } catch (Exception err) {
          err.printStackTrace();
       }
+   }
+
+   static void handleVCRedists()  throws InterruptedException{
+      CountDownLatch countDownLatch = new CountDownLatch(3);
+
+      StoppableThread st;
+
+      List<Thread> handleVCRedits = new ArrayList<>();
+      for(int i = 1; i<4; i++){
+         st = new StoppableThread.Builder().command(CConsumers.getSynchronizedConsumer())
+                    .parameterCommand(VISUAL_CPP_REDISTS.getParameters(i))
+                    .parameterPredicate(DLL_CHECK_CONS.getParameters(i))
+                    .countDownLatch(countDownLatch).build();
+
+         handleVCRedits.add(new Thread(st));
+      }
+
+      for (int i = 0, s = handleVCRedits.size(); i<s;i++) {
+         if(i==2) {
+            if (CPredicates.getExist().test(DLL_CHECK_CONS.getParameters(4)))
+               handleVCRedits.get(i).start();
+            else countDownLatch.countDown();
+         }else{
+            handleVCRedits.get(i).start();
+         }
+      }
+
+      countDownLatch.await();
    }
 }
