@@ -3,11 +3,11 @@ package main.java;
 import main.java.constants.*;
 import main.java.interfaces.concrete.CConsumers;
 import main.java.interfaces.concrete.CPredicates;
-import main.java.interfaces.concrete.CSuppliers;
 import main.java.interfaces.concrete.StoppableThread;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
@@ -21,29 +21,26 @@ public class Main {
       handleVCRedists();
 
       /*Instalando HTTPD Apache Server*/
-      CConsumers.getConsumer().accept(COMMON_COMMANDS.getParameters(1));
+      CConsumers.getCommand().accept(CommonCommand.getParameters(1));
 
       /*Realizando o start dos servidores*/
-      SERVER_STARTERS.GET_SET.forEach(p -> {
+      ServerStarter.GET_SET.forEach(p -> {
          new Thread(() -> {
-            CConsumers.getConsumer().accept(p);
+            CConsumers.getCommand().accept(p);
          }).start();
       });
 
       /*Opening laravel project on chrome*/
-      CConsumers.getConsumer().accept(COMMON_COMMANDS.getParameters(2));
+      CConsumers.getCommand().accept(CommonCommand.getParameters(2));
    }
 
    static void handleUserPathChoice() {
       try {
-         final File PERSISTENT_FILE = new File(RESOURCES.XML.getParam().command());
-         if (CPredicates.getIsFileEmpty().test(PERSISTENT_FILE))
-            CConsumers.getPersistUserPathChoice().accept(CSuppliers.getNonPersistentUserPathChoice().get());
-         final String USER_PATH_CHOICE = CSuppliers.getPersistentUserPathChoice().get();
-         final File HTTPD_CONF = new File(USER_PATH_CHOICE + RESOURCES.HTTPD_CONF_PATH.getValue()
-                                                + RESOURCES.HTTPD_CONF_FILE.getValue());
+         Resource.setUserPathChoice();
+         final File HTTPD_CONF = new File(Resource.getUserPathChoice() + Resource.HTTPD_CONF_PATH.getValue()
+                                                + Resource.HTTPD_CONF_FILE.getValue());
          if (CPredicates.getFileContainsInstallSettings().test(HTTPD_CONF)) {
-            CConsumers.getConfigHttpdConf().accept(USER_PATH_CHOICE);
+            CConsumers.getConfigHttpdConf().accept(Resource.getUserPathChoice());
          }
       } catch (Exception err) {
          err.printStackTrace();
@@ -55,26 +52,27 @@ public class Main {
 
       StoppableThread st;
 
-      List<Thread> handleVCRedits = new ArrayList<>();
-      for(int i = 1; i<4; i++){
-         st = new StoppableThread.Builder().command(CConsumers.getSynchronizedConsumer())
-                    .parameterCommand(VISUAL_CPP_REDISTS.getParameters(i))
-                    .parameterPredicate(DLL_CHECK_CONS.getParameters(i))
+      List<Thread> handleInstallationsCheck = new ArrayList<>();
+      Iterator<String> itr = CheckInstalled.GET_SET.iterator();
+      int i = 1;
+      while(i<4 && itr.hasNext()){
+         st = new StoppableThread.Builder().command(CConsumers.getCommand())
+                    .parameterCommand(VisualCppRedist.getParameters(i))
+                    .strPredicate(itr.next())
                     .countDownLatch(countDownLatch).build();
-
-         handleVCRedits.add(new Thread(st));
+         handleInstallationsCheck.add(new Thread(st));
+         i++;
       }
-
-      for (int i = 0, s = handleVCRedits.size(); i<s;i++) {
+      i=0;
+      for (int s = handleInstallationsCheck.size(); i<s;i++) {
          if(i==2) {
-            if (CPredicates.getExist().test(DLL_CHECK_CONS.getParameters(4)))
-               handleVCRedits.get(i).start();
+            if (CPredicates.getExist().test(Resource.X64_CHECK.getParam()))
+               handleInstallationsCheck.get(i).start();
             else countDownLatch.countDown();
          }else{
-            handleVCRedits.get(i).start();
+            handleInstallationsCheck.get(i).start();
          }
       }
-
       countDownLatch.await();
    }
 }

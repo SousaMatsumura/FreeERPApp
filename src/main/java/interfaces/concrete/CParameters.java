@@ -16,7 +16,8 @@ public class CParameters {
 
          @Override
          public String command() {
-            return command;
+            if(command != null && !command.isEmpty()) return command;
+            else throw new RuntimeException("Command can't be null or empty");
          }
 
          @Override

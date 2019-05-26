@@ -1,6 +1,6 @@
 package main.java.interfaces.concrete;
 
-import main.java.constants.RESOURCES;
+import main.java.constants.Resource;
 import main.java.interfaces.AParameters;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -35,6 +35,30 @@ public class CPredicates {
                 Runtime.getRuntime().runFinalization();
             }
 
+        }
+    };
+
+    private static final Predicate<String> IS_INSTALLED = new Predicate<String>() {
+        @Override
+        public synchronized boolean test(String command) {
+            try {
+                String line;
+                Process p = Runtime.getRuntime().exec(command);
+                BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+                line = input.readLine();
+                do{
+                    if (!line.trim().equals("")) {
+                        if (line.equals("True")) return true;
+                    }
+                }while (((line = input.readLine()) != null) && (line.equals("True") || line.equals("False")));
+                input.close();
+                return false;
+            } catch (Exception err) {
+                err.printStackTrace();
+                return false;
+            }finally {
+                Runtime.getRuntime().runFinalization();
+            }
         }
     };
 
@@ -82,7 +106,7 @@ public class CPredicates {
             try{
                 return (!IS_FILE_EMPTY.test(file) &&
                    StringUtils.contains(
-                      FileUtils.readFileToString(file, StandardCharsets.UTF_8), RESOURCES.INSTALL_SETTINGS.getValue()));
+                      FileUtils.readFileToString(file, StandardCharsets.UTF_8), Resource.INSTALL_SETTINGS.getValue()));
             }catch (Exception err){
                 err.printStackTrace();
                 return false;
@@ -98,15 +122,11 @@ public class CPredicates {
         return EXIST_AND;
     }
 
-    public static Predicate<File> getIsFileEmpty() {
-        return IS_FILE_EMPTY;
-    }
-
-    public static Predicate<File> getFileExists() {
-        return FILE_EXISTS;
-    }
-
     public static Predicate<File> getFileContainsInstallSettings() {
         return FILE_CONTAINS_INSTALL_SETTINGS;
+    }
+
+    public static Predicate<String> getIsInstalled() {
+        return IS_INSTALLED;
     }
 }

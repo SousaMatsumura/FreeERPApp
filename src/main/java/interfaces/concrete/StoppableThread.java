@@ -11,13 +11,13 @@ public class StoppableThread implements Runnable{
    private CountDownLatch countDownLatch;
    private Consumer command;
    private AParameters parameterCommand;
-   private AParameters parameterPredicate;
+   private String strPredicate;
 
-   private StoppableThread(Consumer command, AParameters parameterCommand, AParameters parameterPredicate, CountDownLatch countDownLatch){
-      if(command == null || parameterCommand == null || parameterPredicate == null || countDownLatch == null)
+   private StoppableThread(Consumer command, AParameters parameterCommand, String strPredicate, CountDownLatch countDownLatch){
+      if(command == null || parameterCommand == null || strPredicate == null || countDownLatch == null)
          throw new InvalidParameterException();
-      this.flag = CPredicates.getExist().test(parameterPredicate);
-      this.parameterPredicate = parameterPredicate;
+      this.flag = CPredicates.getIsInstalled().test(strPredicate);
+      this.strPredicate = strPredicate;
       this.command = command;
       this.parameterCommand = parameterCommand;
       this.countDownLatch = countDownLatch;
@@ -27,7 +27,7 @@ public class StoppableThread implements Runnable{
       private CountDownLatch countDownLatch;
       private Consumer command;
       private AParameters parameterCommand;
-      private AParameters parameterPredicate;
+      private String strPredicate;
 
       public Builder(){}
 
@@ -43,12 +43,12 @@ public class StoppableThread implements Runnable{
          this.parameterCommand = parameterCommand;
          return this;
       }
-      public Builder parameterPredicate(AParameters parameterPredicate){
-         this.parameterPredicate = parameterPredicate;
+      public Builder strPredicate(String strPredicate){
+         this.strPredicate = strPredicate;
          return this;
       }
       public StoppableThread build(){
-         return new StoppableThread(command, parameterCommand, parameterPredicate, countDownLatch);
+         return new StoppableThread(command, parameterCommand, strPredicate, countDownLatch);
       }
    }
 
@@ -57,7 +57,7 @@ public class StoppableThread implements Runnable{
       while(!flag){
          try {
             command.accept(parameterCommand);
-            flag = CPredicates.getExist().test(parameterPredicate);
+            flag = CPredicates.getIsInstalled().test(strPredicate);
          }catch (Exception err){
             err.printStackTrace();
          }
