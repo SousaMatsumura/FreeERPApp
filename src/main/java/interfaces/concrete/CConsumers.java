@@ -31,33 +31,12 @@ public class CConsumers {
       }
    };
 
-   /*private static final Consumer<AParameters> COMMAND = new Consumer<AParameters>() {
-      @Override
-      public void accept(AParameters param) {
-         try{
-            Process p;
-            if (param.path().equals("")) {
-               p = Runtime.getRuntime().exec(param.command());
-            } else {
-               p = Runtime.getRuntime().exec(param.command(), null, new File(param.path()));
-            }
-            BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            while (input.readLine() != null);
-            input.close();
-         }catch (Exception err){
-            err.printStackTrace();
-         }
-      }
-   };*/
-
    private static final Consumer<String> CONFIG_HTTPD_CONF = new Consumer<String>() {
       @Override
       public void accept(final String beginPath) {
-         final AParameters PATH_PARAM = CParameters.getInstanceOfParameter(beginPath, null),
-               FILE_PARAM = CParameters.getInstanceOfParameter(
-                     beginPath+ Resource.HTTPD_CONF_PATH.getValue()+ Resource.HTTPD_CONF_FILE.getValue(), null);
+         final String filePath = beginPath+ Resource.HTTPD_CONF_PATH.getValue()+ Resource.HTTPD_CONF_FILE.getValue();
          try {
-            if (CPredicates.getExistAnd().test(new AParameters[]{PATH_PARAM, FILE_PARAM})){
+            if (CPredicates.getExistAnd().test(new String[]{beginPath, filePath})){
                File httpdConf = new File(
                   beginPath+ Resource.HTTPD_CONF_PATH.getValue()+ Resource.HTTPD_CONF_FILE.getValue());
                String fileString =  FileUtils.readFileToString(httpdConf, StandardCharsets.UTF_8),

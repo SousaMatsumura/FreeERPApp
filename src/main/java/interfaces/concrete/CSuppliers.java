@@ -15,7 +15,7 @@ public class CSuppliers {
       @Override
       public String get() {
          try {
-            if (CPredicates.getExistAnd().test(new AParameters[]{Resource.WINDOWS.getParam(), Resource.INI.getParam()})) {
+            if (CPredicates.getExistAnd().test(new String[]{Resource.WINDOWS.getValue(), Resource.WINDOWS.getValue()+Resource.INI.getValue()})) {
                BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(
                      Resource.WINDOWS.getValue()+ Resource.INI.getValue())));
                String line, preference = "";
@@ -25,7 +25,7 @@ public class CSuppliers {
                }
                input.close();
                if(preference.equals(""))
-                  throw new StringIndexOutOfBoundsException("The FreeERP.ini doesn't have the [InstallSettings] variable set.");
+                  throw new RuntimeException("The FreeERP.ini doesn't have the [InstallSettings] variable set.");
                return preference;
             } else {
                throw new Exception("File "+ Resource.WINDOWS.getValue()+ Resource.INI.getValue()+" not found.");

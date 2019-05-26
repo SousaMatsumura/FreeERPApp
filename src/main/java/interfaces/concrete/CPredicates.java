@@ -13,12 +13,12 @@ import java.util.function.Predicate;
 
 public class CPredicates {
     private CPredicates(){}
-    private static final Predicate<AParameters> EXIST = new Predicate<AParameters>() {
+    private static final Predicate<String> EXIST = new Predicate<String>() {
         @Override
-        public boolean test(AParameters param) {
+        public boolean test(String path) {
             try {
                 String line;
-                Process p = Runtime.getRuntime().exec("cmd /C if exist "+param.command()+" (echo t) else (echo f)");
+                Process p = Runtime.getRuntime().exec("cmd /C if exist "+path+" (echo t) else (echo f)");
                 BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
                 line = input.readLine();
                 do{
@@ -34,7 +34,6 @@ public class CPredicates {
             }finally {
                 Runtime.getRuntime().runFinalization();
             }
-
         }
     };
 
@@ -62,11 +61,11 @@ public class CPredicates {
         }
     };
 
-    private static final Predicate<AParameters[]> EXIST_AND = new Predicate<AParameters[]>() {
+    private static final Predicate<String[]> EXIST_AND = new Predicate<String[]>() {
         @Override
-        public boolean test(AParameters[] params) {
+        public boolean test(String[] params) {
             boolean result = true;
-            for (AParameters p : params) {
+            for (String p : params) {
                 result &= EXIST.test(p);
             }
             return result;
@@ -114,11 +113,11 @@ public class CPredicates {
         }
     };
 
-    public static Predicate<AParameters> getExist() {
+    public static Predicate<String> getExist() {
         return EXIST;
     }
 
-    public static Predicate<AParameters[]> getExistAnd() {
+    public static Predicate<String[]> getExistAnd() {
         return EXIST_AND;
     }
 

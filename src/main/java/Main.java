@@ -66,7 +66,7 @@ public class Main {
       i=0;
       for (int s = handleInstallationsCheck.size(); i<s;i++) {
          if(i==2) {
-            if (CPredicates.getExist().test(Resource.X64_CHECK.getParam()))
+            if (CPredicates.getExist().test(Resource.X64_CHECK.getValue()))
                handleInstallationsCheck.get(i).start();
             else countDownLatch.countDown();
          }else{
