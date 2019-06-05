@@ -5,7 +5,7 @@ import main.java.interfaces.AParameters;
 import java.lang.annotation.Annotation;
 
 public class CParameters {
-   private CParameters(){}
+   public CParameters(){}
    public static AParameters getInstanceOfParameter(final String command, final String path){
       return new AParameters(){
 

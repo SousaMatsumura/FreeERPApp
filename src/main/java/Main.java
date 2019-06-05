@@ -21,17 +21,18 @@ public class Main {
       handleVCRedists();
 
       /*Instalando HTTPD Apache Server*/
-      CConsumers.getCommand().accept(CommonCommand.getParameters(1));
+      CConsumers.COMMAND.accept(CommonCommand.getParameters(1));
 
       /*Realizando o start dos servidores*/
-      ServerStarter.GET_SET.forEach(p -> {
+      handleServerStart();
+      /*ServerStarter.GET_SET.forEach(p -> {
          new Thread(() -> {
-            CConsumers.getCommand().accept(p);
+            CConsumers.COMMAND.accept(p);
          }).start();
-      });
+      });*/
 
       /*Opening laravel project on chrome*/
-      CConsumers.getCommand().accept(CommonCommand.getParameters(2));
+      CConsumers.COMMAND.accept(CommonCommand.getParameters(2));
    }
 
    static void handleUserPathChoice() {
@@ -39,8 +40,8 @@ public class Main {
          Resource.setUserPathChoice();
          final File HTTPD_CONF = new File(Resource.getUserPathChoice() + Resource.HTTPD_CONF_PATH.getValue()
                                                 + Resource.HTTPD_CONF_FILE.getValue());
-         if (CPredicates.getFileContainsInstallSettings().test(HTTPD_CONF)) {
-            CConsumers.getConfigHttpdConf().accept(Resource.getUserPathChoice());
+         if (CPredicates.FILE_CONTAINS_INSTALL_SETTINGS.test(HTTPD_CONF)) {
+            CConsumers.CONFIG_HTTPD_CONF.accept(Resource.getUserPathChoice());
          }
       } catch (Exception err) {
          err.printStackTrace();
@@ -56,17 +57,19 @@ public class Main {
       Iterator<String> itr = CheckInstalled.GET_SET.iterator();
       int i = 1;
       while(i<4 && itr.hasNext()){
-         st = new StoppableThread.Builder().command(CConsumers.getCommand())
+         st = new StoppableThread.Builder().command(CConsumers.COMMAND)
                     .parameterCommand(VisualCppRedist.getParameters(i))
                     .strPredicate(itr.next())
-                    .countDownLatch(countDownLatch).build();
+                    .countDownLatch(countDownLatch)
+                    .predicate(CPredicates.IS_INSTALLED)
+                    .build();
          handleInstallationsCheck.add(new Thread(st));
          i++;
       }
       i=0;
       for (int s = handleInstallationsCheck.size(); i<s;i++) {
          if(i==2) {
-            if (CPredicates.getExist().test(Resource.X64_CHECK.getValue()))
+            if (CPredicates.EXIST.test(Resource.X64_CHECK.getValue()))
                handleInstallationsCheck.get(i).start();
             else countDownLatch.countDown();
          }else{
@@ -74,5 +77,49 @@ public class Main {
          }
       }
       countDownLatch.await();
+   }
+
+   static void handleServerStart()  throws InterruptedException{
+      Iterator<String> itr = ServerName.GET_SET.iterator();
+      int i = 1;
+      List<Thread> handleServerStarterCheck = new ArrayList<>();
+      while(i<4 && itr.hasNext()){
+         while(CPredicates.IS_STARTED.test(itr.next())){
+            handleServerStarterCheck.add( new
+            CConsumers.COMMAND.accept(ServerStarter.getParameters(i));
+            i++;
+            )
+         }
+      }
+
+      /*ServerStarter.GET_SET.forEach(p -> {
+         handleServerStarterCheck.add(new Thread(() -> {
+            CConsumers.COMMAND.accept(p);
+         }));
+      });*/
+
+
+      /*CountDownLatch countDownLatch = new CountDownLatch(3);
+
+      StoppableThread st;
+
+      List<Thread> handleServerStarterCheck = new ArrayList<>();
+      Iterator<String> itr = ServerName.GET_SET.iterator();
+      int i = 1;
+      while(i<4 && itr.hasNext()){
+         st = new StoppableThread.Builder().command(CConsumers.COMMAND)
+                    .parameterCommand(ServerStarter.getParameters(i))
+                    .strPredicate(itr.next())
+                    .countDownLatch(countDownLatch)
+                    .predicate(CPredicates.IS_STARTED)
+                    .build();
+         handleServerStarterCheck.add(new Thread(st));
+         i++;
+      }
+      i=0;
+      for (int s = handleServerStarterCheck.size(); i<s;i++) {
+         handleServerStarterCheck.get(i).start();
+      }
+      countDownLatch.await();*/
    }
 }

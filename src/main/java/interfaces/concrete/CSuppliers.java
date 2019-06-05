@@ -15,7 +15,7 @@ public class CSuppliers {
       @Override
       public String get() {
          try {
-            if (CPredicates.getExistAnd().test(new String[]{Resource.WINDOWS.getValue(), Resource.WINDOWS.getValue()+Resource.INI.getValue()})) {
+            if (CPredicates.EXIST_AND.test(new String[]{Resource.WINDOWS.getValue(), Resource.WINDOWS.getValue()+Resource.INI.getValue()})) {
                BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(
                      Resource.WINDOWS.getValue()+ Resource.INI.getValue())));
                String line, preference = "";

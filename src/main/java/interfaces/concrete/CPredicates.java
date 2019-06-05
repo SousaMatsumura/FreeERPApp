@@ -12,8 +12,30 @@ import java.nio.charset.StandardCharsets;
 import java.util.function.Predicate;
 
 public class CPredicates {
-    private CPredicates(){}
-    private static final Predicate<String> EXIST = new Predicate<String>() {
+    public CPredicates(){}
+    public static final Predicate<String> IS_STARTED = new Predicate<String>() {
+        @Override
+        public synchronized boolean test(String process) {
+            try{
+                Process p;
+                p = Runtime.getRuntime().exec("tasklist");
+                BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+                String line;
+                while ((line = input.readLine()) != null){
+                    System.out.println(line);
+                    if(StringUtils.contains(line, process)){
+                        return true;
+                    }
+                }
+                input.close();
+            }catch (Exception err){
+                err.printStackTrace();
+            }
+            return false;
+        }
+    };
+
+    public static final Predicate<String> EXIST = new Predicate<String>() {
         @Override
         public boolean test(String path) {
             try {
@@ -37,7 +59,7 @@ public class CPredicates {
         }
     };
 
-    private static final Predicate<String> IS_INSTALLED = new Predicate<String>() {
+    public static final Predicate<String> IS_INSTALLED = new Predicate<String>() {
         @Override
         public synchronized boolean test(String command) {
             try {
@@ -61,7 +83,7 @@ public class CPredicates {
         }
     };
 
-    private static final Predicate<String[]> EXIST_AND = new Predicate<String[]>() {
+    public static final Predicate<String[]> EXIST_AND = new Predicate<String[]>() {
         @Override
         public boolean test(String[] params) {
             boolean result = true;
@@ -72,7 +94,7 @@ public class CPredicates {
         }
     };
 
-    private static final Predicate<File> IS_FILE_EMPTY = new Predicate<File>() {
+    public static final Predicate<File> IS_FILE_EMPTY = new Predicate<File>() {
         @Override
         public boolean test(final File file) {
             try{
@@ -87,7 +109,7 @@ public class CPredicates {
         }
     };
 
-    private static final Predicate<File> FILE_EXISTS = new Predicate<File>() {
+    public static final Predicate<File> FILE_EXISTS = new Predicate<File>() {
         @Override
         public boolean test(final File file) {
             try{
@@ -99,7 +121,7 @@ public class CPredicates {
         }
     };
 
-    private static final Predicate<File> FILE_CONTAINS_INSTALL_SETTINGS = new Predicate<File>() {
+    public static final Predicate<File> FILE_CONTAINS_INSTALL_SETTINGS = new Predicate<File>() {
         @Override
         public boolean test(File file) {
             try{
@@ -112,20 +134,4 @@ public class CPredicates {
             }
         }
     };
-
-    public static Predicate<String> getExist() {
-        return EXIST;
-    }
-
-    public static Predicate<String[]> getExistAnd() {
-        return EXIST_AND;
-    }
-
-    public static Predicate<File> getFileContainsInstallSettings() {
-        return FILE_CONTAINS_INSTALL_SETTINGS;
-    }
-
-    public static Predicate<String> getIsInstalled() {
-        return IS_INSTALLED;
-    }
 }

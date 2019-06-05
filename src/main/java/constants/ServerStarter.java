@@ -38,4 +38,10 @@ public enum ServerStarter {
             Constants.START_APACHE_PARAM, Constants.START_POSTGRE_PARAM, Constants.START_ARTISAN_PARAM);
       return new LinkedHashSet<>(Collections.unmodifiableSet(new LinkedHashSet<>(temp)));
    }
+   public static AParameters getParameters(final int value){
+      if(value == 1) return Constants.START_APACHE_PARAM;
+      if(value == 2) return Constants.START_POSTGRE_PARAM;
+      if(value == 3) return Constants.START_ARTISAN_PARAM;
+      else throw new NullPointerException(("Value "+value+" don't exists"));
+   }
 }
