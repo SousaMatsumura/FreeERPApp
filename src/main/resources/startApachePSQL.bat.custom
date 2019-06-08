@@ -1,0 +1,9 @@
+cd [InstallSettings]\11\bin
+tasklist | findstr postgres || pg_ctl -D "[InstallSettings]\11\data" start
+
+cd [InstallSettings]\EnterpriseDB-ApacheHTTPD\apache\bin
+httpd.exe -k install -n "Apache HTTP Server"
+
+tasklist | findstr httpd || httpd.exe
+
+exit

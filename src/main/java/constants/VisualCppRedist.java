@@ -18,11 +18,11 @@ public class VisualCppRedist {
 
    private static class Constants {
       private static final AParameters X86_2013_PARAM = CParameters.getInstanceOfParameter(
-            Resource.getUserPathChoice()+"\\EnterpriseDB-ApacheHTTPD\\installer\\ApacheHTTPD\\vcredist_x86.exe", null);
+            Resource.USER_PATH_CHOICE+"\\EnterpriseDB-ApacheHTTPD\\installer\\ApacheHTTPD\\vcredist_x86.exe", null);
       private static final AParameters X86_2017_PARAM = CParameters.getInstanceOfParameter(
-            Resource.getUserPathChoice()+"\\11\\installer\\vcredist_x86.exe", null);
+            Resource.USER_PATH_CHOICE+"\\11\\installer\\vcredist_x86.exe", null);
       private static final AParameters X64_2017_PARAM = CParameters.getInstanceOfParameter(
-            Resource.getUserPathChoice()+"\\11\\installer\\vcredist_x64.exe", null);
+            Resource.USER_PATH_CHOICE+"\\11\\installer\\vcredist_x64.exe", null);
    }
 
 }

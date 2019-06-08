@@ -32,14 +32,12 @@ public class CConsumers {
       }
    };
 
-   public static final Consumer<String> CONFIG_HTTPD_CONF = new Consumer<String>() {
+   public static final Consumer<String> CONFIG_FILE = new Consumer<String>() {
       @Override
-      public void accept(final String beginPath) {
-         final String filePath = beginPath + Resource.HTTPD_CONF_PATH.getValue() + Resource.HTTPD_CONF_FILE.getValue();
+      public void accept(final String filePath) {
          try {
-            if (CPredicates.EXIST_AND.test(new String[]{beginPath, filePath})) {
-               File httpdConf = new File(
-                       beginPath + Resource.HTTPD_CONF_PATH.getValue() + Resource.HTTPD_CONF_FILE.getValue());
+            if (CPredicates.EXIST_AND.test(new String[]{filePath, filePath})) {
+               File httpdConf = new File(filePath);
                String fileString = FileUtils.readFileToString(httpdConf, StandardCharsets.UTF_8),
                        replace = CSuppliers.getReadUserPathChoice().get();
                fileString = StringUtils.replace(fileString, Resource.INSTALL_SETTINGS.getValue(), replace);

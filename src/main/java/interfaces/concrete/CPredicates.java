@@ -22,7 +22,6 @@ public class CPredicates {
                 BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
                 String line;
                 while ((line = input.readLine()) != null){
-                    System.out.println(line);
                     if(StringUtils.contains(line, process)){
                         return true;
                     }

@@ -9,7 +9,7 @@ public enum ServerName {
     HTTPD(1), POSTGRES(2), PHP(3);
     private int id;
     public static final LinkedHashSet<String> GET_SET = getSet();
-    private ServerName(int id){
+    ServerName(int id){
         this.id = id;
     }
 
