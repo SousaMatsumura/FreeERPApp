@@ -1,18 +1,7 @@
-import static org.junit.gen5.api.Assertions.*;
 
-import main.java.constants.Resource;
-import main.java.interfaces.AParameters;
-import main.java.interfaces.concrete.CConsumers;
-import main.java.interfaces.concrete.CParameters;
-import main.java.interfaces.concrete.CPredicates;
-import org.apache.commons.lang3.StringUtils;
-import org.junit.gen5.api.Test;
-
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.concurrent.TimeUnit;
+import java.sql.*;
+
 
 class Teste {
     static final String httpd = "httpd.exe";
@@ -20,17 +9,36 @@ class Teste {
 
    public static void main(String[] args) throws IOException, InterruptedException {
 
-       Runtime.getRuntime().exec("cmd /c start C:\\Users\\spwnd\\Desktop\\FreeERP\\start-server\\startPHP.vbs");
-       Runtime.getRuntime().exec("cmd /c start C:\\Users\\spwnd\\Desktop\\FreeERP\\start-server\\startBrowser.vbs");
-       Runtime.getRuntime().exec("cmd /c start C:\\Users\\spwnd\\Desktop\\FreeERP\\start-server\\startApachePSQL.vbs");
-      /* do CConsumers.CONFIG_FILE.accept("C:\\Users\\spwnd\\Desktop\\FreeERP\\start-server\\startApachePSQL.bat");
-       while (CPredicates.FILE_CONTAINS_INSTALL_SETTINGS.test(new File("C:\\Users\\spwnd\\Desktop\\FreeERP\\start-server\\startApachePSQL.bat")));
+      try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432", "postgres", "postgre")) {
+         Statement std = connection.createStatement();
+         std.execute("CREATE EXTENSION IF NOT EXISTS dblink;");
+         std.execute("DO\n" +
+                                               "$do$\n" +
+                                               "BEGIN\n" +
+                                               "   IF NOT EXISTS (\n" +
+                                               "      SELECT\n" +
+                                               "      FROM   pg_catalog.pg_roles\n" +
+                                               "      WHERE  rolname = 'root') THEN\n" +
+                                               "      CREATE ROLE root WITH LOGIN;\n" +
+                                               "   END IF;\n" +
+                                               "END\n" +
+                                               "$do$;");
+         //System.out.println(rs.toString());
+         std.execute("DO\n" +
+                           "$do$\n" +
+                           "BEGIN\n" +
+                           "   IF EXISTS (SELECT 1 FROM pg_database WHERE datname = 'freeerp') THEN\n" +
+                           "      RAISE NOTICE 'Database already exists'; \n" +
+                           "   ELSE\n" +
+                           "      PERFORM dblink_exec('host=127.0.0.1 dbname=postgres user=postgres port=5432 password=postgre'," +
+                           "'CREATE DATABASE freeerp OWNER = root');\n" +
+                           "   END IF;" +
+                           "END\n" +
+                           "$do$ LANGUAGE plpgsql;");
+      }catch (SQLException e){
+         e.printStackTrace();
+      }
 
-       do CConsumers.CONFIG_FILE.accept("C:\\Users\\spwnd\\Desktop\\FreeERP\\start-server\\startPHP.bat");
-       while (CPredicates.FILE_CONTAINS_INSTALL_SETTINGS.test(new File("C:\\Users\\spwnd\\Desktop\\FreeERP\\start-server\\startPHP.bat")));*/
-
-      Resource.setUserPathChoice();
-       System.out.println(Resource.USER_PATH_CHOICE);
    }
 
 }

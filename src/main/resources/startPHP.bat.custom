@@ -1,4 +1,4 @@
-[InstallSettings]\laravel\app-demo
+cd [InstallSettings]\laravel\app-demo
 
 tasklist | findstr php || [InstallSettings]\PHP7\php.exe artisan serve
 

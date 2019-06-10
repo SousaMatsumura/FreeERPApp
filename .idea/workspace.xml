@@ -1,7 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0edac67-c3b5-4daa-8a12-989c7c6d987d" name="Default Changelist" comment="" />
+    <list default="true" id="e0edac67-c3b5-4daa-8a12-989c7c6d987d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pear.bat.custom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pear.ini.custom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/php.ini.custom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/startApachePSQL.vbs.custom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/startBrowser.vbs.custom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/startPHP.vbs.custom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec-master/FreeERPExec-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec-master/META-INF/FreeERPExec-master.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/META-INF/FreeERPExec.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/constants/CommonCommands$Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/constants/CommonCommands.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/constants/DLLs$Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/constants/DLLs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/constants/ServerStarters$Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/constants/ServerStarters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/constants/VCRedists$Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/constants/VCRedists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/freeerp/FreeERP$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/freeerp/FreeERP$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/freeerp/FreeERP$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/freeerp/FreeERP$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/freeerp/FreeERP$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/freeerp/FreeERP$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/freeerp/FreeERP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/interfaces/AParameters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/interfaces/ICommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/interfaces/concrete/CCommand$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/interfaces/concrete/CCommand$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/interfaces/concrete/CCommand$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/interfaces/concrete/CCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/interfaces/concrete/CParameters$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/interfaces/concrete/CParameters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/interfaces/concrete/CPredicates$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/interfaces/concrete/CPredicates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FreeERPExec/main/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/httpd.conf.custom" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/httpd.conf.custom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/startBrowser.bat.custom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/startPHP.bat.custom" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/startPHP.bat.custom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Teste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/httpd.conf.custom" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/httpd.conf.custom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/FreeERPExec-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/constants/CheckInstalled.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/constants/CommonCommand$Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/constants/CommonCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/constants/Resource$Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/constants/Resource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/constants/ServerName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/constants/ServerStarter$Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/constants/ServerStarter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/constants/VisualCppRedist$Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/constants/VisualCppRedist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/AParameters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CConsumers$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CConsumers$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CConsumers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CParameters$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CParameters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CPredicates$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CPredicates$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CPredicates$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CPredicates$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CPredicates$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CPredicates$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CPredicates$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CPredicates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CSuppliers$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/CSuppliers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/StoppableThread$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/StoppableThread$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/interfaces/concrete/StoppableThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/InnoFreeERPSettings.iss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/httpd.conf.custom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/httpd.conf.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Teste.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Teste.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +96,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="93" column="6" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
+            <state relative-caret-position="253">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -27,79 +108,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/constants/CheckInstalled.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="11" column="44" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="44" />
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/constants/VisualCppRedist.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/constants/Resource.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/concrete/CConsumers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/concrete/CPredicates.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/constants/ServerStarter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/constants/ServerName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#138#139#0" expanded="true" />
-                <element signature="e#164#165#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/concrete/CSuppliers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/concrete/StoppableThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+              <caret line="7" column="118" selection-start-line="7" selection-start-column="118" selection-end-line="7" selection-end-column="118" />
             </state>
           </provider>
         </entry>
@@ -107,11 +129,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Teste.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="46" selection-start-line="14" selection-start-column="32" selection-end-line="15" selection-end-column="46" />
+            <state relative-caret-position="34">
+              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -125,6 +156,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>InstallSettings</find>
+      <find>index.html</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -132,7 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/Teste.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaces/concrete/CSuppliers.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaces/concrete/CParameters.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaces/concrete/CPredicates.java" />
@@ -141,7 +177,15 @@
         <option value="$PROJECT_DIR$/src/main/java/constants/CheckInstalled.java" />
         <option value="$PROJECT_DIR$/src/main/java/constants/ServerName.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaces/concrete/StoppableThread.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/startApachePSQL.vbs.custom" />
+        <option value="$PROJECT_DIR$/src/main/resources/startBrowser.vbs.custom" />
+        <option value="$PROJECT_DIR$/src/main/resources/startPHP.vbs.custom" />
+        <option value="$PROJECT_DIR$/src/main/resources/startPHP.bat.custom" />
+        <option value="$PROJECT_DIR$/src/main/resources/httpd.conf.custom" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/Teste.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
       </list>
     </option>
   </component>
@@ -156,12 +200,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="FreeERPApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="FreeERPApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FreeERPApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FreeERPApp" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FreeERPApp" type="b2602c69:ProjectViewProjectNode" />
@@ -200,33 +251,27 @@
               <item name="FreeERPApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FreeERPApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FreeERPApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-              <item name="concrete" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560175906886" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\GabrieldeSousaMatsum\Desktop\projects\FreeERPApp\src\main\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -243,7 +288,7 @@
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.Main" />
-      <module name="FreeERPExec" />
+      <module name="FreeERPApp" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.java.*" />
@@ -256,7 +301,7 @@
     </configuration>
     <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Teste" />
-      <module name="FreeERPExec" />
+      <module name="FreeERPApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -279,13 +324,20 @@
       <option name="presentableId" value="Default" />
       <updated>1559607846353</updated>
     </task>
+    <task id="LOCAL-00001" summary="Dealing with Postgresql database.">
+      <created>1560173480067</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560173480067</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26519758" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -294,7 +346,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30441898" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29459903" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -303,6 +355,9 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Tool Output" order="12" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -313,18 +368,11 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Dealing with Postgresql database." />
+    <option name="LAST_COMMIT_MESSAGE" value="Dealing with Postgresql database." />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Resource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding>
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1771#1772#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/concrete/CParameters.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -339,27 +387,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/constants/CommonCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/CommonCommand.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/ServerStarter.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/concrete/CPredicates.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/concrete/CConsumers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Teste.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="46" selection-start-line="14" selection-start-column="32" selection-end-line="15" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="884">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
@@ -370,10 +403,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/constants/CheckInstalled.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/concrete/StoppableThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="44" />
+        <state relative-caret-position="289">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/startBrowser.bat.custom" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Enum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="129" column="18" selection-start-line="129" selection-start-column="18" selection-end-line="129" selection-end-column="18" />
+          <folding>
+            <element signature="e#4005#4006#0" expanded="true" />
+            <element signature="e#4032#4033#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/startBrowser.vbs.custom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/startApachePSQL.vbs.custom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/startApachePSQL.bat.custom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/startPHP.vbs.custom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/concrete/CConsumers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/startPHP.bat.custom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/VisualCppRedist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -383,53 +477,107 @@
           <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#138#139#0" expanded="true" />
-            <element signature="e#164#165#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/concrete/CPredicates.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/CheckInstalled.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="136">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/concrete/StoppableThread.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pear.ini.custom">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/php.ini.custom">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state relative-caret-position="175">
+          <caret line="732" column="32" selection-start-line="732" selection-start-column="17" selection-end-line="732" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/constants/VisualCppRedist.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pear.bat.custom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/httpd.conf.custom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="61" column="39" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Resource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <caret line="7" column="118" selection-start-line="7" selection-start-column="118" selection-end-line="7" selection-end-column="118" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/constants/ServerStarter.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Teste.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="93" column="6" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
+          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>OSGi Bundle</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <last-edited>javafx</last-edited>
@@ -444,11 +592,24 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>11</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>FreeERPApp</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -468,6 +629,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: commons-io:commons-io:2.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
