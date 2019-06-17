@@ -69,6 +69,7 @@ public class CPredicates {
                 do{
                     if (!line.trim().equals("")) {
                         if (line.equals("True")) return true;
+                        else if(line.equals("False")) return false;
                     }
                 }while (((line = input.readLine()) != null) && (line.equals("True") || line.equals("False")));
                 input.close();

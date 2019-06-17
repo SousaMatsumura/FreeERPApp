@@ -1,7 +1,9 @@
 package main.java;
 
 import main.java.constants.*;
+import main.java.interfaces.AParameters;
 import main.java.interfaces.concrete.CConsumers;
+import main.java.interfaces.concrete.CParameters;
 import main.java.interfaces.concrete.CPredicates;
 import main.java.interfaces.concrete.StoppableThread;
 import org.apache.commons.lang3.StringUtils;
@@ -35,6 +37,7 @@ public class Main {
 
       TimeUnit.SECONDS.sleep(15);
       handleDataBase();
+      handleMigrate();
 
       do CConsumers.COMMAND.accept(Resource.PHP_BAT.getParam());
       while (!CPredicates.IS_STARTED.test(ServerName.PHP.toString()));
@@ -100,35 +103,52 @@ public class Main {
    }
 
    private static void handleDataBase(){
+      /**DB_DATABASE=bd
+       DB_USERNAME=demo
+       DB_PASSWORD=demo*/
       try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432", "postgres", "postgre")) {
          Statement std = connection.createStatement();
-         std.execute("CREATE EXTENSION IF NOT EXISTS dblink;");
+         std.execute("CREATE SCHEMA IF NOT EXISTS public;");
+         std.execute("CREATE EXTENSION IF NOT EXISTS dblink SCHEMA public;");
          std.execute("DO\n" +
                            "$do$\n" +
                            "BEGIN\n" +
                            "   IF NOT EXISTS (\n" +
                            "      SELECT\n" +
                            "      FROM   pg_catalog.pg_roles\n" +
-                           "      WHERE  rolname = 'root') THEN\n" +
-                           "      CREATE ROLE root WITH LOGIN;\n" +
+                           "      WHERE  rolname = 'demo') THEN\n" +
+                           "      CREATE ROLE demo WITH LOGIN PASSWORD 'demo';\n" +
                            "   END IF;\n" +
                            "END\n" +
                            "$do$;");
          std.execute("DO\n" +
                            "$do$\n" +
                            "BEGIN\n" +
-                           "   IF EXISTS (SELECT 1 FROM pg_database WHERE datname = 'freeerp') THEN\n" +
+                           "   IF EXISTS (SELECT 1 FROM pg_database WHERE datname = 'db') THEN\n" +
                            "      RAISE NOTICE 'Database already exists'; \n" +
                            "   ELSE\n" +
                            "      PERFORM dblink_exec('host=127.0.0.1 dbname=postgres user=postgres port=5432 password=postgre'," +
-                           "'CREATE DATABASE freeerp OWNER = root');\n" +
+                           "'CREATE DATABASE db OWNER = demo');\n" +
                            "   END IF;" +
                            "END\n" +
                            "$do$ LANGUAGE plpgsql;");
-         std.execute("ALTER ROLE root WITH SUPERUSER CREATEDB CREATEROLE;");
+         std.execute("ALTER ROLE demo WITH SUPERUSER CREATEDB CREATEROLE;");
       }catch (SQLException e){
          e.printStackTrace();
       }
+   }
+
+   private static void handleMigrate(){
+      /**php artisan migrate
+       * php artisan make:auth*/
+      AParameters migrate = CParameters.getInstanceOfParameter(
+              Resource.USER_PATH_CHOICE+"\\PHP7\\php.exe artisan migrate",
+              Resource.USER_PATH_CHOICE+"\\laravel\\app-demo");
+      AParameters auth = CParameters.getInstanceOfParameter(
+              Resource.USER_PATH_CHOICE+"\\PHP7\\php.exe artisan make:auth",
+              Resource.USER_PATH_CHOICE+"\\laravel\\app-demo");
+      CConsumers.COMMAND.accept(migrate);
+      CConsumers.COMMAND.accept(auth);
    }
 
    private static void handleVCRedists()  throws InterruptedException{
@@ -140,6 +160,7 @@ public class Main {
       Iterator<String> itr = CheckInstalled.GET_SET.iterator();
       int i = 1;
       while(i<4 && itr.hasNext()){
+
          st = new StoppableThread.Builder().command(CConsumers.COMMAND)
                     .parameterCommand(VisualCppRedist.getParameters(i))
                     .strPredicate(itr.next())

@@ -26,7 +26,7 @@ public enum CheckInstalled {
       return "cmd /c powershell.exe \"(((Get-ChildItem \"HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\")" +
          " | Where-Object { $_.GetValue( 'DisplayName' ) -like '*"+getValue()+"*' } ).Length -gt 0)" +
          " -or (((Get-ChildItem \"HKLM:\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\")" +
-             " | Where-Object { $_.GetValue( 'DisplayName' ) -like '*"+getValue()+"*' } ).Length -gt 0)";
+             " | Where-Object { $_.GetValue( 'DisplayName' ) -like '*"+getValue()+"*' } ).Length -gt 0)\"";
    }
 
    private static LinkedHashSet getSet(){
