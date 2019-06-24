@@ -31,16 +31,19 @@ public class Main {
 
 
       /*Instalando Servers*/
-      do CConsumers.COMMAND.accept(Resource.APACHE_PSQL_BAT.getParam());
       while ((!CPredicates.IS_STARTED.test(ServerName.HTTPD.toString()))
-              && (!CPredicates.IS_STARTED.test(ServerName.POSTGRES.toString())));
+              && (!CPredicates.IS_STARTED.test(ServerName.POSTGRES.toString()))){
+         CConsumers.COMMAND.accept(Resource.APACHE_PSQL_BAT.getParam());
+         CPredicates.IS_STARTED.test(ServerName.POSTGRES.toString());
+         if(CPredicates.IS_STARTED.test(ServerName.POSTGRES.toString())) TimeUnit.SECONDS.sleep(30);
+      }
 
-      TimeUnit.SECONDS.sleep(15);
       handleDataBase();
       handleMigrate();
 
-      do CConsumers.COMMAND.accept(Resource.PHP_BAT.getParam());
-      while (!CPredicates.IS_STARTED.test(ServerName.PHP.toString()));
+      while (!CPredicates.IS_STARTED.test(ServerName.PHP.toString())){
+         CConsumers.COMMAND.accept(Resource.PHP_BAT.getParam());
+      }
 
       /*Opening laravel project on default browser*/
       CConsumers.COMMAND.accept(Resource.START_BROWSER_BAT.getParam());
@@ -148,10 +151,12 @@ public class Main {
               Resource.USER_PATH_CHOICE+"\\PHP7\\php.exe artisan make:auth",
               Resource.USER_PATH_CHOICE+"\\laravel\\app-demo");
       CConsumers.COMMAND.accept(migrate);
-      CConsumers.COMMAND.accept(auth);
+      if(!CPredicates.EXIST.test(Resource.USER_PATH_CHOICE+"\\laravel\\app-demo\\resources\\views\\home.blade.php")) {
+         CConsumers.COMMAND.accept(auth);
+      }
    }
 
-   private static void handleVCRedists()  throws InterruptedException{
+   private static void handleVCRedists() throws InterruptedException{
       CountDownLatch countDownLatch = new CountDownLatch(3);
 
       StoppableThread st;
